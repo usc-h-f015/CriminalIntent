@@ -25,6 +25,7 @@ public class CrimeListFragment extends Fragment {
     private RecyclerView mCrimeRecyclerView;
     private CrimeAdapter mAdapter;
     private boolean mSubtitleVisible;
+    private Crime mCrime;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -67,6 +68,7 @@ public class CrimeListFragment extends Fragment {
             subtitleItem.setTitle(R.string.hide_subtitle);
         } else {
             subtitleItem.setTitle(R.string.show_subtitle);
+
         }
     }
     @Override
@@ -83,10 +85,10 @@ public class CrimeListFragment extends Fragment {
                 mSubtitleVisible = !mSubtitleVisible; getActivity().invalidateOptionsMenu();
                 updateSubtitle();
                 return true;
- /*           case R.id.remove_crime:
+            /*case R.id.remove_crime:
                 CrimeLab crimeLab = CrimeLab.get(getActivity());
                 crimeLab.deleteItem(mCrime.getId());
-                Intent intent = new Intent(getActivity(), CrimeListActivity.class);
+               intent = new Intent(getActivity(), CrimeListActivity.class);
                 startActivity(intent);
                 return true;*/
 
